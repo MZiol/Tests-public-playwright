@@ -19,7 +19,7 @@ export default defineConfig({
       name: 'pms-chromium',
       use: { 
         ...devices['Desktop Chrome'],
-        baseURL: 'http://pixelmount.pl' 
+        baseURL: 'https://pixelmount.pl' 
       },
       testMatch: 'tests/pms/**/*.spec.ts',
     },
@@ -27,7 +27,7 @@ export default defineConfig({
       name: 'pms-firefox',
       use: { 
         ...devices['Desktop Firefox'],
-        baseURL: 'http://pixelmount.pl' 
+        baseURL: 'https://pixelmount.pl' 
       },
       testMatch: 'tests/pms/**/*.spec.ts',
     },
@@ -36,7 +36,7 @@ export default defineConfig({
       name: 'minibudzet-chromium',
       use: { 
         ...devices['Desktop Chrome'],
-        baseURL: 'http://minibudzet.pl'
+        baseURL: 'https://minibudzet.pl'
        },
       testMatch: 'tests/minibudzet/**/*.spec.ts',
     },
@@ -44,16 +44,9 @@ export default defineConfig({
       name: 'minibudzet-firefox',
       use: { 
         ...devices['Desktop Firefox'],
-        baseURL: 'http://minibudzet.pl'
+        baseURL: 'https://minibudzet.pl'
        },
       testMatch: 'tests/minibudzet/**/*.spec.ts',
     },
   ],
-
-  /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   command: 'npm run start',
-  //   url: 'http://localhost:3000',
-  //   reuseExistingServer: !process.env.CI,
-  // },
 });
