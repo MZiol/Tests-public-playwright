@@ -1,4 +1,4 @@
-import { test, expect } from "../fixtures/home-fixtures";
+import { test, expect } from "../fixtures";
 
 test.describe("Homepage checks", () => {
     test.beforeEach(async ({ homePage }) => {
