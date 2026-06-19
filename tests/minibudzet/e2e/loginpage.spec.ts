@@ -23,7 +23,7 @@ test.describe("Login page checks", () => {
         await loginPage.usernameInput.fill("test@minibudzet.pl");
         await loginPage.passwordInput.fill("Testy12345678!");
         await loginPage.loginButton.click();
-        await loginPage.page.waitForURL(/main\/dashboard/);
-        await expect(loginPage.page).toHaveURL(/main\/dashboard/);
+        await loginPage.page.waitForURL("/main/dashboard");
+        await expect(loginPage.page).toHaveURL("/main/dashboard");
     });
 });

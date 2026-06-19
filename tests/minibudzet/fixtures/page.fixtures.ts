@@ -1,10 +1,13 @@
-import { test as base } from '@playwright/test';
+import { test as base, type Page } from '@playwright/test';
 import { HomePage } from '../pages/HomePage';
 import { LoginPage } from '../pages/LoginPage';
+import { DashboardPage } from '../pages/DashboardPage';
 
 type PageFixtures = {
   homePage: HomePage;
   loginPage: LoginPage;
+  dashboardPage: DashboardPage;
+  authenticatedPage: Page;
 };
 
 export const test = base.extend<PageFixtures>({
@@ -18,7 +21,20 @@ export const test = base.extend<PageFixtures>({
     const loginPage = new LoginPage(page);
     await use(loginPage);
   },
-  
+
+  // authenticatedPage: async ({ page, loginPage }, use) => {
+  //   await loginPage.goTo();
+  //   await loginPage.usernameInput.fill("test@minibudzet.pl");
+  //   await loginPage.passwordInput.fill("Testy12345678!");
+  //   await loginPage.loginButton.click();
+  //   await page.waitForURL("/main/dashboard");
+  //   await use(page);
+  // } 
+
+  dashboardPage: async ({ page }, use) => {
+    const dashboardPage = new DashboardPage(page);
+    await use(dashboardPage);
+  }
 });
 
 export { expect } from '@playwright/test';
