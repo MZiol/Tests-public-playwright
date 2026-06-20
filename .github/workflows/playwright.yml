@@ -19,6 +19,9 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: npx playwright test
+      env:
+        MINIBUDZET_TEST_USER_MAIL: ${{ secrets.MINIBUDZET_TEST_USER_MAIL }}
+        MINIBUDZET_TEST_USER_PASSWORD: ${{ secrets.MINIBUDZET_TEST_USER_PASSWORD }}
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
