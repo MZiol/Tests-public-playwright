@@ -12,8 +12,8 @@ export class DashboardPage {
 
   async goto() {
     await this.loginPage.goTo();
-    await this.loginPage.usernameInput.fill("test@minibudzet.pl");
-    await this.loginPage.passwordInput.fill("Testy12345678!");
+    await this.loginPage.usernameInput.fill(this.loginPage.testUserEmail);
+    await this.loginPage.passwordInput.fill(this.loginPage.testUserPassword);
     await this.loginPage.loginButton.click();
   }
 }

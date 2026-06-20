@@ -22,15 +22,6 @@ export const test = base.extend<PageFixtures>({
     await use(loginPage);
   },
 
-  // authenticatedPage: async ({ page, loginPage }, use) => {
-  //   await loginPage.goTo();
-  //   await loginPage.usernameInput.fill("test@minibudzet.pl");
-  //   await loginPage.passwordInput.fill("Testy12345678!");
-  //   await loginPage.loginButton.click();
-  //   await page.waitForURL("/main/dashboard");
-  //   await use(page);
-  // } 
-
   dashboardPage: async ({ page }, use) => {
     const dashboardPage = new DashboardPage(page);
     await use(dashboardPage);

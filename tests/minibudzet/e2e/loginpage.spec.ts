@@ -20,8 +20,8 @@ test.describe("Login page checks", () => {
     });
 
     test("should navigate to mainpage when successful login", async ({ loginPage }) => {
-        await loginPage.usernameInput.fill("test@minibudzet.pl");
-        await loginPage.passwordInput.fill("Testy12345678!");
+        await loginPage.usernameInput.fill(loginPage.testUserEmail);
+        await loginPage.passwordInput.fill(loginPage.testUserPassword);
         await loginPage.loginButton.click();
         await loginPage.page.waitForURL("/main/dashboard");
         await expect(loginPage.page).toHaveURL("/main/dashboard");

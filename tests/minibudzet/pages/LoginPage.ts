@@ -7,6 +7,9 @@ export class LoginPage {
   readonly loginButton: Locator;
   readonly errorMessage: Locator;
 
+  readonly testUserEmail: string = process.env.MINIBUDZET_TEST_USER_MAIL || '';
+  readonly testUserPassword: string = process.env.MINIBUDZET_TEST_USER_PASSWORD || '';
+
   constructor(page: Page) {
     this.page = page;
     this.usernameInput = page.locator('input[name="email"]');
